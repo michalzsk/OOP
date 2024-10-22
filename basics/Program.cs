@@ -2,25 +2,18 @@
 {
     internal class Program
     {
-        public class group
+        public class Group(string name, int count, string mainTeacher, string[] students)
         {
-            public string name;
-            public int count;
-            public string mainteacher;
-            public string[] students;
+            public string name { get; private set; } = name;
+            public int count { get; private set; } = count;
+            public string mainTeacher { get; private set; } = mainTeacher;
+            public string[] students { get; private set; } = students;
         }
         static void Main(string[] args)
         {
-            group PiataC= new group();
-            PiataC.name = "5C";
-            PiataC.count = 20;
-            PiataC.mainteacher = "Obstalecka";
-            PiataC.students = new string[PiataC.count];
-            group PiataA = new group();
-            PiataA.name = "5A";
-            PiataA.count = 25;
-            PiataA.mainteacher = "Radar";
-            PiataA.students = new string[PiataA.count];
+            Group g1 = new Group("5c", 20, "Obstalecka", new string[20]);
+            Group g2 = new Group("5a", 22, "Radar", new string[22]);
+
             Random random = new Random();
             for(int i = 0; i < 10; i++)
             {
@@ -28,12 +21,12 @@
                 if (rnd == 1)
                 {
                     Console.WriteLine(rnd);
-                    Console.WriteLine("wygrywa" + PiataC.mainteacher);
+                    Console.WriteLine("wygrywa" + g1.mainTeacher);
                 }
                 else
                 {
                     Console.WriteLine(rnd);
-                    Console.WriteLine("wygrywa" + PiataA.mainteacher);
+                    Console.WriteLine("wygrywa" + g2.mainTeacher);
                 }
             }
             string[] pkn = new string[3] { "papier", "kamien", "nozyce" };
@@ -42,19 +35,19 @@
             {
                 int rnd2 = random.Next(0, 2);
                 int rnd3 = random.Next(0, 2);
-                Console.WriteLine(PiataC.mainteacher + " zagrywa "+ pkn[rnd2]);
-                Console.WriteLine(PiataA.mainteacher + " zagrywa " + pkn[rnd3]);
+                Console.WriteLine(g1.mainTeacher + " zagrywa "+ pkn[rnd2]);
+                Console.WriteLine(g2.mainTeacher + " zagrywa " + pkn[rnd3]);
                 if (rnd2 == rnd3)
                 {
                     Console.WriteLine("remis");
                 }else if(rnd2==0 && rnd3==1 || rnd2==1 && rnd3==2 || rnd2==2 && rnd3 == 0)
                 {
-                    Console.WriteLine("wygrywa "+ PiataC.mainteacher);
+                    Console.WriteLine("wygrywa "+ g1.mainTeacher);
                     isFight = false;
                 }
                 else
                 {
-                    Console.WriteLine("wygrywa " + PiataA.mainteacher);
+                    Console.WriteLine("wygrywa " + g2.mainTeacher);
                     isFight = false;
                 }
 
