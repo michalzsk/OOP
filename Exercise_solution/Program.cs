@@ -3,7 +3,7 @@ Book g1 = new Book("Ewok", "Michal Kluczynski", 69);
 Book g2 = new Book("asd", "asd", 123);
 g1.view();
 g2.view();
-Book g3 = new Book("","",0);
+Book g3 = new Book(null, null, 0);
 g3.add();
 g3.view();
 
