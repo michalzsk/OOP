@@ -1,23 +1,10 @@
 ﻿namespace Exercise_solution
 {
-    public class Car
+    class Program
     {
-        public string Model { get; set; }
-        public string Name { get; set; }
-        public int ProductionDate { get; set; }
-        public Car(string model, string name, int productionDate)
+        public static void Main(string[] args)
         {
-            Model = model;
-            Name = name;
-            ProductionDate = productionDate;
+            Console.WriteLine();
         }
-        public void DisplayInfo()
-        {
-            Console.WriteLine(Model);
-            Console.WriteLine(Name);
-            Console.WriteLine(ProductionDate);
-        }
-
     }
-
 }

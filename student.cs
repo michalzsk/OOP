@@ -12,21 +12,21 @@ public class Student
 	}
 	public Student(string name, int grade)
 	{
-		this.name = name;
+		Name = name;
 		Grade = grade;
 	}
 	public void IsPassing()
 	{
-		int grade = int.parse(Console.ReadLine());
+		int Grade = int.parse(Console.ReadLine());
 		if (Grade > 2)
 		{
-			console.write($"Uczen {name} zdaje");
-			return 1;
+			console.write($"Uczen {Name} zdaje");
+			return true;
 		}
 		else
 		{
-			Console.Write($"Uczen {name} nie zdaje")
-			return 0;
+			Console.Write($"Uczen {Name} nie zdaje")
+			return false;
 		}
 	}
 }
