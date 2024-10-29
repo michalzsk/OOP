@@ -15,7 +15,7 @@ Food test = new Food("Hot Dog", 0);
 test.ChangeIntoEnergy();
 
 Dog piesek = new Dog("Fafik", 0);
-piesek.Eat(test.EnergyGiven);
+piesek.Eat(test);
 public class Book(string title, string author, int pages)
 {
     public string title { get; private set; } = title;
@@ -80,11 +80,15 @@ public class Dog(string Name, int EnergyLvl)
 {
     public string Name { get; set; } = Name;
     public int EnergyLvl { get; set; } = EnergyLvl;
-    public void Eat(int EnergyGiven)
+    public void Eat(object obj)
     {
-        Console.WriteLine($"EnergyLvl przed zjedzeniem: {this.EnergyLvl}");
-        EnergyLvl += EnergyGiven;
-        Console.WriteLine($"EnergyLvl po zjedzeniu: {this.EnergyLvl}");
+        Console.WriteLine($"Poziom energii pieska przed zjedzeniem: {this.EnergyLvl}");
+        if (obj.GetType() == typeof(Food))
+        {
+            Food food = (Food)obj;
+            this.EnergyLvl += food.EnergyGiven;
+        }
+        Console.WriteLine($"Poziom energii pieska: {this.EnergyLvl}");
     }
 }
 
