@@ -11,6 +11,11 @@ main.Deposit();
 main.WithDraw();
 main.DisplayBalance();
 
+Food test = new Food("Hot Dog", 0);
+test.ChangeIntoEnergy();
+
+Dog piesek = new Dog("Fafik", 0);
+piesek.Eat(test.EnergyGiven);
 public class Book(string title, string author, int pages)
 {
     public string title { get; private set; } = title;
@@ -59,6 +64,27 @@ public class BankAccount(string OwnerName, double Balance)
     public void DisplayBalance()
     {
         Console.WriteLine($"Twoje aktualne saldo konta wynosi: {this.Balance}");
+    }
+}
+public class Food(string TypeName,int EnergyGiven)
+{
+    public string TypeName { private get; set; } = TypeName;
+    public int EnergyGiven { get; set; } = EnergyGiven;
+    public void ChangeIntoEnergy()
+    {
+        Random random = new Random();
+        this.EnergyGiven = random.Next(6,10);
+    }
+}
+public class Dog(string Name, int EnergyLvl)
+{
+    public string Name { get; set; } = Name;
+    public int EnergyLvl { get; set; } = EnergyLvl;
+    public void Eat(int EnergyGiven)
+    {
+        Console.WriteLine($"EnergyLvl przed zjedzeniem: {this.EnergyLvl}");
+        EnergyLvl += EnergyGiven;
+        Console.WriteLine($"EnergyLvl po zjedzeniu: {this.EnergyLvl}");
     }
 }
 
