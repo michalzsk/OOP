@@ -7,6 +7,12 @@ ben.MakeSound(ben.Race);
 bmw.DisplayMaxSpeed(bmw.MaxSpeed);
 kawasaki.DisplayMaxSpeed(kawasaki.MaxSpeed);
 
+Manager Michal = new Manager("Michal","Kluczynski",42069,50);
+Michal.CalculateSalary();
+SalesPerson Ewk = new SalesPerson("Ewok", "Ewokowski", 420420, 420, 420);
+Ewk.CalculateSalary();
+
+
 public class Vehicle(int maxspeed)
 {   
     public int MaxSpeed = maxspeed;
